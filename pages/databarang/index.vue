@@ -19,6 +19,7 @@
           <th>Warna</th>
           <th>Ukuran</th>
           <th>Jumlah</th>
+          <th>Harga</th>
           <th>Aksi</th>
         </tr>
       </thead>
@@ -32,6 +33,7 @@
           <td>{{ item.category_name }}</td>
           <td>{{ item.color_name }}</td>
           <td>{{ item.size_name }}</td>
+          <td>{{ item.jumlah }}</td>
           <td>{{ item.price }}</td>
           <td>
             <button
@@ -119,6 +121,11 @@
 
               <div class="mb-3">
                 <label>Jumlah</label>
+                <input v-model="jumlah" type="number" class="form-control" />
+              </div>
+
+              <div class="mb-3">
+                <label>Harga</label>
                 <input v-model="price" type="number" class="form-control" />
               </div>
             </div>
@@ -228,6 +235,7 @@ const tambahBarang = () => {
 const resetForm = () => {
   name.value = "";
   price.value = 0;
+  jumlah.value = 0;
   color.value = null;
   size.value = null;
   category.value = null;
@@ -260,6 +268,7 @@ const getProducts = async () => {
       name,
       code,
       price,
+      jumlah,
       color:color(id, name, code),
       size:size(id, name, code),
       category:category_product(id, name, code)
@@ -296,6 +305,7 @@ const Product = async () => {
     {
       name: name.value,
       price: price.value,
+      jumlah: jumlah.value,
       color_id: color.value,
       category_id: category.value,
       size_id: size.value,
@@ -315,6 +325,7 @@ const updateBarang = async () => {
     .update({
       name: name.value,
       price: price.value,
+      jumlah: jumlah.value,
       color_id: color.value,
       category_id: category.value,
       size_id: size.value,
@@ -348,6 +359,7 @@ const deleteBarang = async (id) => {
 const editBarang = (item) => {
   name.value = item.name;
   price.value = item.price;
+  jumlah.value = item.jumlah;
   color.value = item.color?.id;
   size.value = item.size?.id;
   category.value = item.category?.id;
