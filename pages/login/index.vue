@@ -25,9 +25,7 @@
             
             />
           </div>
-          <div class="d-flex justify-content-end mb-2">
-            <a href="#" class="text-decoration-none">Lupa Sandi?</a>
-          </div>
+          
           <div>
             <button type="submit" class="btn btn-primary w-100">Masuk</button>
           </div>
