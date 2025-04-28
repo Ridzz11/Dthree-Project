@@ -12,7 +12,7 @@
               type="email"
               id="email"
               class="form-control"
-              placeholder="Email Address"
+
             />
           </div>
           <div class="mb-3">
@@ -22,7 +22,7 @@
               type="password"
               id="password"
               class="form-control"
-              placeholder="Password"
+            
             />
           </div>
           <div class="d-flex justify-content-end mb-2">
